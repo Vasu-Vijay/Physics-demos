@@ -28,7 +28,6 @@ $(async function () {
         if (Date.now() - then > 20) {
             setup();
             if (showRed) {
-                ctx.lineWidth = 2;
                 ctx.beginPath();
                 ctx.moveTo(10, topY - a1 * Math.sin(w1 * t) / factor);
                 ctx.strokeStyle = "rgb(255,0,0)";
