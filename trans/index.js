@@ -11,7 +11,7 @@ w1 = Math.PI,
 w2 = Math.PI, dif = 150, sign = 1, anim, showRed = true, showBlue = true, showBlack = true, factor = 0.5, incr = 1, topY;
 
 $(async function () {
-    if (window.location.href.indexOf('html') == -1) {
+    if (window.location.href.indexOf('html')== -1) {
 		$("#home").attr('href','..');
 	}
     function GetURLParameter(sParam, oldVal) {
