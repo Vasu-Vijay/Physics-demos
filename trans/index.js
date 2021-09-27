@@ -31,7 +31,31 @@ $(async function () {
     w1 = Math.PI / GetURLParameter('t1', 1);
     w2 = Math.PI / GetURLParameter('t2', 1);
     dif = GetURLParameter('l', 150);
-    $("#lmd1").val(lmda1);
+	console.log('hi');
+	console.log(GetURLParameter('showRed', true))
+	var param=GetURLParameter('showRed','true');
+	console.log(typeof param);
+	if(param.indexOf('false')==-1){
+		showRed=true
+	}
+	else {
+		showRed=false;
+	}
+	param=GetURLParameter('showBlue','true');
+	if(param.indexOf('false')==-1){
+		showBlue=true
+	}
+	else {
+		showBlue=false;
+	}
+	param=GetURLParameter('showBlack','true');
+	if(param.indexOf('false')==-1){
+		showBlack=true
+	}
+	else {
+		showBlack=false;
+	}
+        $("#lmd1").val(lmda1);
     $("#lmd2").val(lmda2);
     $("#amp1").val(a1);
     $("#amp2").val(a2);
@@ -108,6 +132,7 @@ $(async function () {
             $("#red").html("Hide red wave")
             showRed = true;
         }
+        window.history.replaceState('', '', updateURLParameter(window.location.href, 'showRed', showRed))
     });
     $("#black").on('click', async function () {
         if ($("#black").html() == "Hide black wave") {
@@ -117,6 +142,7 @@ $(async function () {
             $("#black").html("Hide black wave")
             showBlack = true;
         }
+        window.history.replaceState('', '', updateURLParameter(window.location.href, 'showBlack', showBlack))
     });
     $("#blue").on('click', async function () {
         if ($("#blue").html() == "Hide blue wave") {
@@ -126,6 +152,7 @@ $(async function () {
             $("#blue").html("Hide blue wave")
             showBlue = true;
         }
+        window.history.replaceState('', '', updateURLParameter(window.location.href, 'showBlue', showBlue))
     });
     document.onkeydown = function (e) {
         var k = e.key;
@@ -136,28 +163,34 @@ $(async function () {
             $("#stop").click();
         }
         if (k == 'r') {
-            for (let i = 0; i < dif; i++) {
-                $(".red").attr("y", "0");
-                $(".blue").attr("y", "0");
-                $(".black").attr("y", "0");
-                clearInterval(inte);
-                a1 = 15;
-                a2 = 15;
-                lmda1 = 75;
-                lmda2 = 75;
-                w1 = Math.PI;
-                w2 = Math.PI;
-                t = 0;
-                sign = 1;
-                $("#lmd1").val(75);
-                $("#lmd2").val(75);
-                $("#amp1").val(15);
-                $("#amp2").val(15);
-                $("#t1").val(1);
-                $("#t2").val(1);
-                $("#stop").click();
-                setup();
-            }
+            $(".red").attr("y", "0");
+            $(".blue").attr("y", "0");
+            $(".black").attr("y", "0");
+            clearInterval(inte);
+            a1 = 15;
+            a2 = 15;
+            lmda1 = 75;
+            lmda2 = 75;
+            w1 = Math.PI;
+            w2 = Math.PI;
+            t = 0;
+            sign = 1;
+            $("#lmd1").val(75);
+            $("#lmd2").val(75);
+            $("#amp1").val(15);
+            $("#amp2").val(15);
+            $("#t1").val(1);
+            $("#t2").val(1);
+            window.history.replaceState('', '', updateURLParameter(window.location.href, 'lmd1', lmda1))
+            window.history.replaceState('', '', updateURLParameter(window.location.href, 'lmd2', lmda2))
+            window.history.replaceState('', '', updateURLParameter(window.location.href, 'amp1', a1))
+            window.history.replaceState('', '', updateURLParameter(window.location.href, 'amp2', a2))
+            window.history.replaceState('', '', updateURLParameter(window.location.href, 't1', val1))
+            window.history.replaceState('', '', updateURLParameter(window.location.href, 't2', val2))
+            window.history.replaceState('', '', updateURLParameter(window.location.href, 'l', dif))
+            $("#stop").click();
+            setup();
+
         }
         if (k == 't') {
             $("#sign").click();
