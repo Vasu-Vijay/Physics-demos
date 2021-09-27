@@ -11,6 +11,9 @@ w1 = Math.PI,
 w2 = Math.PI, dif = 150, sign = 1, anim, showRed = true, showBlue = true, showBlack = true, factor = 0.5, incr = 1, topY;
 
 $(async function () {
+    if (window.location.href.indexOf('html') == -1) {
+		$("#home").attr('href','..');
+	}
     function GetURLParameter(sParam, oldVal) {
         var sPageURL = window.location.search.substring(1);
         var sURLVariables = sPageURL.split('&');
@@ -31,31 +34,28 @@ $(async function () {
     w1 = Math.PI / GetURLParameter('t1', 1);
     w2 = Math.PI / GetURLParameter('t2', 1);
     dif = GetURLParameter('l', 150);
-	console.log('hi');
-	console.log(GetURLParameter('showRed', true))
-	var param=GetURLParameter('showRed','true');
-	console.log(typeof param);
-	if(param.indexOf('false')==-1){
-		showRed=true
-	}
-	else {
-		showRed=false;
-	}
-	param=GetURLParameter('showBlue','true');
-	if(param.indexOf('false')==-1){
-		showBlue=true
-	}
-	else {
-		showBlue=false;
-	}
-	param=GetURLParameter('showBlack','true');
-	if(param.indexOf('false')==-1){
-		showBlack=true
-	}
-	else {
-		showBlack=false;
-	}
-        $("#lmd1").val(lmda1);
+    console.log('hi');
+    console.log(GetURLParameter('showRed', true))
+    var param = GetURLParameter('showRed', 'true');
+    console.log(typeof param);
+    if (param.indexOf('false') == -1) {
+        showRed = true
+    } else {
+        showRed = false;
+    }
+    param = GetURLParameter('showBlue', 'true');
+    if (param.indexOf('false') == -1) {
+        showBlue = true
+    } else {
+        showBlue = false;
+    }
+    param = GetURLParameter('showBlack', 'true');
+    if (param.indexOf('false') == -1) {
+        showBlack = true
+    } else {
+        showBlack = false;
+    }
+    $("#lmd1").val(lmda1);
     $("#lmd2").val(lmda2);
     $("#amp1").val(a1);
     $("#amp2").val(a2);

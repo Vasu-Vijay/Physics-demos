@@ -1,14 +1,16 @@
-var f1=100, f2=100, play1 = false, play2 = false;
-
-$(async function () {
-    document.onkeydown = function (e) {
-		var k=e.key
+var f1 = 100, f2 = 100, play1 = false, play2 = false;
+document.onkeydown = function (e) {
+    var k = e.key
         if (k == 'm') {
             $("#sound1").click();
         }
         if (k == 'n') {
             $("#sound2").click();
         }
+}
+$(async function () {
+    if (window.location.href.indexOf('html') == -1) {
+        $("#home").attr('href', '..');
     }
 });
 function f(n) {
@@ -28,11 +30,11 @@ function f(n) {
     }
     if (n == 1 || n == '1') {
 
-        f1=val1
-        $("#sound1").click();
+        f1 = val1
+            $("#sound1").click();
         $("#sound1").click();
     } else {
-        f2=val2;
+        f2 = val2;
         $("#sound2").click();
         $("#sound2").click();
     }
