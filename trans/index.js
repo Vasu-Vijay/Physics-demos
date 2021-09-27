@@ -14,6 +14,9 @@ $(async function () {
     if (window.location.href.indexOf('html')== -1) {
 		$("#home").attr('href','..');
 	}
+	let prms=window.location.href.split('?');
+	if(prms[1]==undefined){prms[1]='';}
+	$("#link").attr('href','https://vasu-vijay.github.io/Physics-demos/trans/'	+ "?" + prms[1]);
     function GetURLParameter(sParam, oldVal) {
         var sPageURL = window.location.search.substring(1);
         var sURLVariables = sPageURL.split('&');
@@ -380,5 +383,6 @@ function updateURLParameter(url, param, val) {
         paramVal += "#" + TheAnchor;
 
     var rows_txt = temp + "" + param + "=" + paramVal;
+	$("#link").attr('href','https://vasu-vijay.github.io/Physics-demos/trans/'	+ "?" + newAdditionalURL + rows_txt);
     return baseURL + "?" + newAdditionalURL + rows_txt;
 }
