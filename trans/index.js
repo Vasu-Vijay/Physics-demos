@@ -37,6 +37,7 @@ $(async function () {
     w1 = Math.PI / GetURLParameter('t1', 1);
     w2 = Math.PI / GetURLParameter('t2', 1);
     dif = GetURLParameter('l', 150);
+    sign = GetURLParameter('sign', 1);
     console.log('hi');
     console.log(GetURLParameter('showRed', true))
     var param = GetURLParameter('showRed', 'true');
@@ -191,6 +192,7 @@ $(async function () {
             window.history.replaceState('', '', updateURLParameter(window.location.href, 't1', val1))
             window.history.replaceState('', '', updateURLParameter(window.location.href, 't2', val2))
             window.history.replaceState('', '', updateURLParameter(window.location.href, 'l', dif))
+            window.history.replaceState('', '', updateURLParameter(window.location.href, 'sign', sign))
             $("#stop").click();
             setup();
 
@@ -201,6 +203,7 @@ $(async function () {
     }
     $("#sign").on('click', async function () {
         sign = -sign;
+		window.history.replaceState('', '', updateURLParameter(window.location.href, 'sign', sign))
     });
     function setup() {
         ctx.clearRect(0, 0, 1000, 500);
