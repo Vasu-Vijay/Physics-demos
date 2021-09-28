@@ -11,16 +11,17 @@ w1 = Math.PI,
 w2 = Math.PI, dif = 150, sign = 1, anim, showRed = true, showBlue = true, showBlack = true, factor = 0.5, incr = 1, topY;
 
 $(async function () {
-    if (window.location.href.indexOf('html')== -1) {
-		$("#home").attr('href','..');
-	}
-	let prms=window.location.href.split('?');
-	if(prms[1]==undefined){prms[1]='';}
-	$("#link").attr('href','https://vasu-vijay.github.io/Physics-demos/trans/'	+ "?" + prms[1]);
+    if (window.location.href.indexOf('html') == -1) {
+        $("#home").attr('href', '..');
+    }
+    let prms = window.location.href.split('?');
+    if (prms[1] == undefined) {
+        prms[1] = '';
+    }
+    $("#link").attr('href', 'https://vasu-vijay.github.io/Physics-demos/trans/' + "?" + prms[1]);
     function GetURLParameter(sParam, oldVal) {
         var sPageURL = window.location.search.substring(1);
         var sURLVariables = sPageURL.split('&');
-        console.log(sURLVariables);
         for (var i = 0; i < sURLVariables.length; i++) {
             var sParameterName = sURLVariables[i].split('=');
             if (sParameterName[0] == sParam) {
@@ -37,11 +38,8 @@ $(async function () {
     w1 = Math.PI / GetURLParameter('t1', 1);
     w2 = Math.PI / GetURLParameter('t2', 1);
     dif = GetURLParameter('l', 150);
-    sign = GetURLParameter('sign', 1);
-    console.log('hi');
-    console.log(GetURLParameter('showRed', true))
+    sign = parseInt(GetURLParameter('sign', 1));
     var param = GetURLParameter('showRed', 'true');
-    console.log(typeof param);
     if (param.indexOf('false') == -1) {
         showRed = true
     } else {
@@ -189,8 +187,8 @@ $(async function () {
             window.history.replaceState('', '', updateURLParameter(window.location.href, 'lmd2', lmda2))
             window.history.replaceState('', '', updateURLParameter(window.location.href, 'amp1', a1))
             window.history.replaceState('', '', updateURLParameter(window.location.href, 'amp2', a2))
-            window.history.replaceState('', '', updateURLParameter(window.location.href, 't1', val1))
-            window.history.replaceState('', '', updateURLParameter(window.location.href, 't2', val2))
+            window.history.replaceState('', '', updateURLParameter(window.location.href, 't1', 1))
+            window.history.replaceState('', '', updateURLParameter(window.location.href, 't2', 1))
             window.history.replaceState('', '', updateURLParameter(window.location.href, 'l', dif))
             window.history.replaceState('', '', updateURLParameter(window.location.href, 'sign', sign))
             $("#stop").click();
@@ -203,7 +201,7 @@ $(async function () {
     }
     $("#sign").on('click', async function () {
         sign = -sign;
-		window.history.replaceState('', '', updateURLParameter(window.location.href, 'sign', sign))
+        window.history.replaceState('', '', updateURLParameter(window.location.href, 'sign', sign))
     });
     function setup() {
         ctx.clearRect(0, 0, 1000, 500);
@@ -386,6 +384,6 @@ function updateURLParameter(url, param, val) {
         paramVal += "#" + TheAnchor;
 
     var rows_txt = temp + "" + param + "=" + paramVal;
-	$("#link").attr('href','https://vasu-vijay.github.io/Physics-demos/trans/'	+ "?" + newAdditionalURL + rows_txt);
+    $("#link").attr('href', 'https://vasu-vijay.github.io/Physics-demos/trans/' + "?" + newAdditionalURL + rows_txt);
     return baseURL + "?" + newAdditionalURL + rows_txt;
 }
