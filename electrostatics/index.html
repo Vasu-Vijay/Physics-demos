@@ -24,7 +24,12 @@
         <span id="cx1">cx1:   30</span><br>
         <span id="cx2">cx2:   320</span><br>
 		<p id="p"></p>
-				<script type="text/javascript" src="index.js"></script>
-
+		<a href="../index.html" id="home">Home page</a>
+		<script type="text/javascript">
+			if (window.location.href.indexOf('html') == -1) {
+				$("#home").attr('href', '..');
+			}		
+		</script>
+		<script type="text/javascript" src="index.js"></script>
 	</body>
 </html>

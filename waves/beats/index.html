@@ -14,6 +14,11 @@
 		Frequency 1(in s^-1):<input id="f1" onchange="f(1)" value="100">
 		Frequency 2(in s^-1):<input id="f2" onchange="f(2)" value="100"><br/><br><br>
 		<a id="home" href="../../index.html">Home page</a>
+		<script type="text/javascript">
+			if (window.location.href.indexOf('html') == -1) {
+				$("#home").attr('href', '../..');
+			}		
+		</script>
 		<script src="index.js"></script><br/>
 	</body><br/>
 </html><br/>

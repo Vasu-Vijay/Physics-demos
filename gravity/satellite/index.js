@@ -1,5 +1,7 @@
 var G = 0.00000000667, m = 5000, mp = 6 * Math.pow(10, 12), then, anim, ctx, q = 0, r = 230, x = -230, y = 0, vx = 0, vy = 10, a = G * mp / (r * r), ax = a, ay = 0, dt = 0.001, inte;
-$(async function () {})
+$(async function () {
+
+})
 function start() {
     if (!anim) {
         then = Date.now();

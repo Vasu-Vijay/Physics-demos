@@ -6,7 +6,13 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 	<body>
-		<a id="a1" href="./satellite">Satellite simulator</a><br>
+		<a id="a1" href="./satellite">Satellite simulator</a><br><br><br>
+		<a href="../index.html" id="home">Home page</a>
+		<script type="text/javascript">
+			if (window.location.href.indexOf('html') == -1) {
+				$("#home").attr('href', '..');
+			}		
+		</script>
 		<script src="index.js"></script>
 	</body>
 </html>

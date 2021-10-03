@@ -8,6 +8,13 @@
 	<body>
 		<a id="a1" href="./trans">Transverse wave simulator</a><br>
 		<a id="a2" href="./beats">Beats simulator</a>
+		<br><br>
+		<a href="../index.html" id="home">Home page</a>
+		<script type="text/javascript">
+			if (window.location.href.indexOf('html') == -1) {
+				$("#home").attr('href', '..');
+			}		
+		</script><br><br>
 		<footer>My site doesnt own the coding logics behind the canvas things. Transverse wave simulator idea partially copied from ngsir.netfirms.com</footer>
 		<script src="index.js"></script>
 	</body>
