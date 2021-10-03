@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Electrostatic Collision Simulator</title>
+        	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+		<link rel="stylesheet" href="index.css"></style>
+		<link rel="icon" href="favicon.ico">
+		
+	</head>
+	<body>
+		<div id="container">
+            <svg height="500px" width="500px">
+                <circle id="o1" cx="30" cy="160" r="15"></circle>
+                <circle id="o2" cx="320" cy="160" r="15"></circle>                
+            </svg>
+        </div>
+        <button onclick="start()">Start Movement</button>
+		Speed:<input id="speed" value="1" onchange="speed()"></input>
+        <br><span id="s1">distance travelled by object1 :  0</span><br>
+        <span id="s2">distance travelled by object2:  0</span><br>
+        <span id="v1">speed of object1:   0</span><br>
+        <span id="v2">speed of object2:    0</span><br>
+        <span id="t">time elapsed:   0</span><br>
+        <span id="cx1">cx1:   30</span><br>
+        <span id="cx2">cx2:   320</span><br>
+		<p id="p"></p>
+				<script type="text/javascript" src="index.js"></script>
+
+	</body>
+</html>
