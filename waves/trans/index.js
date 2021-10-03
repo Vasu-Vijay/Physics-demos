@@ -384,6 +384,6 @@ function updateURLParameter(url, param, val) {
         paramVal += "#" + TheAnchor;
 
     var rows_txt = temp + "" + param + "=" + paramVal;
-    $("#link").attr('href', 'https://vasu-vijay.github.io/Physics-demos//waves/trans/' + "?" + newAdditionalURL + rows_txt);
+    $("#link").attr('href', 'https://vasu-vijay.github.io/Physics-demos/waves/trans/' + "?" + newAdditionalURL + rows_txt);
     return baseURL + "?" + newAdditionalURL + rows_txt;
 }
