@@ -12,7 +12,7 @@ w2 = Math.PI, dif = 150, sign = 1, anim, showRed = true, showBlue = true, showBl
 
 $(async function () {
     if (window.location.href.indexOf('html') == -1) {
-        $("#home").attr('href', '..');
+        $("#home").attr('href', '../..');
     }
     let prms = window.location.href.split('?');
     if (prms[1] == undefined) {

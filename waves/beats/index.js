@@ -10,7 +10,7 @@ document.onkeydown = function (e) {
 }
 $(async function () {
     if (window.location.href.indexOf('html')== -1) {
-        $("#home").attr('href', '..');
+        $("#home").attr('href', '../..');
     }
 });
 function f(n) {

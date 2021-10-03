@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gravity demos</title>
+		<link rel="icon" href="favicon.ico">
+		<link rel="stylesheet" href="index.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+	<body>
+	<div id="div">
+		Under development
+		<br><br>
+		To see the beta, verify yourself <br>
+		Password:<input id="pwd" onchange="checkPwd()">
+		<p></p>
+	</div>
+	<div id="div2" style="display:none;">
+		<canvas width="1125" height="600" id="c"></canvas><br>
+		<button id="start" onclick="start()">Start</button>
+		<button id="stop" onclick="stop()">Stop</button><br>
+		Initial projection speed: <input id="vy" onchange="update()">
+	</div>
+		<script src="index.js"></script>
+	</body>
+</html>
