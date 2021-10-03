@@ -1,4 +1,4 @@
 @echo off
 git add .
-git commit -m "commit"
+git commit -m "another commit."
 git push -u origin main
