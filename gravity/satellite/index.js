@@ -75,6 +75,7 @@ function animate() {
     //}
 }
 function checkPwd() {
+    console.log(process.env.PWD_SATELLITE);
     if ($('#pwd').val() == 'gmmpta@667') {
         $('#div2').css('display','block')
         $('#div').css('display','none')
